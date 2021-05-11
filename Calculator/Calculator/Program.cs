@@ -34,19 +34,23 @@ namespace Calculator
             switch (Console.ReadLine())
             {
                 case "a":
-                    Console.WriteLine($"Your result {number1} + {number2} = " + (number1 + number2));
+                    Console.WriteLine($"Your result: {number1} + {number2} = " + (number1 + number2));
                     break;
 
                 case "s":
-                    Console.WriteLine($"Your result {number1} - {number2} = " + (number1 - number2));
+                    Console.WriteLine($"Your result: {number1} - {number2} = " + (number1 - number2));
                     break;
 
                 case "m":
-                    Console.WriteLine($"Your result {number1} * {number2} = " + (number1 * number2));
+                    Console.WriteLine($"Your result: {number1} * {number2} = " + (number1 * number2));
                     break;
-
                 case "d":
-                    Console.WriteLine($"Your result {number1} / {number2} = " + (number1 / number2));
+                    while (number2 == 0)
+                    {
+                        Console.WriteLine("Enter a non-zero divisor: ");
+                        number2 = Convert.ToInt32(Console.ReadLine());
+                    }
+                    Console.WriteLine($"Your result: {number1} / {number2} = " + (number1 / number2));
                     break;
             }
 
